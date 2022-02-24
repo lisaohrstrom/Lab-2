@@ -1,0 +1,19 @@
+@model Actor
+
+@{
+    ViewData["Title"] = "Selected Actor";
+}
+
+<h1>@Model.FirstName @Model.LastName</h1>
+<br>
+<h3>Takes part in the following movies:</h3>
+
+    @{
+            foreach (var movie in Model.Movies)
+            {
+                <li>@movie.Title, @movie.ReleaseYear</li>
+            }
+    }
+
+    
+

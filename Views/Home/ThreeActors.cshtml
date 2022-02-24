@@ -1,0 +1,18 @@
+@model List<Movie>
+
+@{
+    ViewData["Title"] = "Three Actors";
+}
+
+<h1>Three Actors</h1><br>
+<h4>Here you can find @Model.Count movies with three actors taking place in the move.</h4>
+<p>Ordered by the oldest first:</p>
+
+<ul>
+    @{
+            foreach (var movie in Model)
+            {
+                <li><a href="/Home/SelectedMovie/@movie.Id">@movie.Title,</a> @movie.ReleaseYear</li>
+            }
+    }
+</ul>

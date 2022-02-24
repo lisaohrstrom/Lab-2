@@ -1,0 +1,18 @@
+@model Movie
+
+@{
+    ViewData["Title"] = "Selected Movie";
+}
+
+<h1>@Model.Title</h1><br>
+
+<p><b>Genre:</b> @Model.Genre </p>
+<p><b>Release Year:</b> @Model.ReleaseYear </p>
+<p><b>Actors:</b> </p>
+
+    @{
+            foreach (var actor in Model.Actors)
+            {
+                <li><a href="/Home/SelectedActor/@actor.Id">@actor.FirstName @actor.LastName</a></li>
+            }
+    }

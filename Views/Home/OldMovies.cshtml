@@ -1,0 +1,18 @@
+@model List<Movie>
+
+@{
+    ViewData["Title"] = "Old Movies";
+}
+
+<h1>Old Movies</h1><br>
+<h4>Here you can find @Model.Count movies released before the year 2000.</h4>
+<p>Ordered by the newest first:</p>
+
+<ul>
+    @{
+            foreach (var movie in Model)
+            {
+                <li><a href="/Home/SelectedMovie/@movie.Id">@movie.Title,</a> @movie.ReleaseYear</li>
+            }
+    }
+</ul>
