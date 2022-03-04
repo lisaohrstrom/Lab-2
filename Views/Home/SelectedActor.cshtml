@@ -11,7 +11,7 @@
     @{
             foreach (var movie in Model.Movies)
             {
-                <li>@movie.Title, @movie.ReleaseYear</li>
+                <li><a href="/Home/SelectedMovie/@movie.Id">@movie.Title </a>, @movie.ReleaseYear</li>
             }
     }
 

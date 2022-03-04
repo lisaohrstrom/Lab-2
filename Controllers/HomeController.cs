@@ -27,7 +27,7 @@ namespace MovieLab.Controllers
 
         public IActionResult OldMovies () 
         {
-            var movies = Movie.GetAllMovies().Where(movie => movie.ReleaseYear < 2000).OrderBy(movie => movie.ReleaseYear).ToList();
+            var movies = Movie.GetAllMovies().Where(movie => movie.ReleaseYear < 2000).OrderByDescending(movie => movie.ReleaseYear).ToList();
 
             return View(movies);
         }
